@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build and Run C++20",
+            "type": "shell",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-std=c++2a",
+                "-Wall",
+                "-Wextra",
+                "-g",
+                "\"${file}\"",
+                "-o",
+                "\"${workspaceFolder}/output/${fileBasenameNoExtension}.exe\"", // Изменено
+                "&&",
+                "\"${workspaceFolder}/output/${fileBasenameNoExtension}.exe\"" // Изменено
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "clear": true
+            },
+            "options": {
+                "env": {
+                    "PATH": "C:/mingw64/bin;${env:PATH}"
+                }
+            }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe сборка активного файла",
+            "command": "C:/mingw64/bin/g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/output/${fileBasenameNoExtension}.exe" // Изменено
+            ],
+            "options": {
+                "cwd": "C:/mingw64/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        }
+    ]
+}
